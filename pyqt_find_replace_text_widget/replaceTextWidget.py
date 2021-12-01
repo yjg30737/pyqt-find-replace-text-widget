@@ -47,8 +47,6 @@ class ReplaceTextWidget(QWidget):
         self.__replaceAllBtn.clicked.connect(self.__replaceAll)
         self.__excludeBtn.clicked.connect(self.__exclude)
 
-        # applier.set_hint_size(btns)
-
         lay = QHBoxLayout()
         lay.addWidget(self.__replaceLineEdit)
         for btn in btns:

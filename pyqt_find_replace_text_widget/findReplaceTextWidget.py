@@ -79,10 +79,13 @@ class FindReplaceTextWidget(QWidget):
         self.__replaceTextWidget.setText(cursors)
 
     def __swap(self):
-        print('swap')
+        find_text = self.__findTextWidget.getLineEdit().text()
+        replace_text = self.__replaceTextWidget.getLineEdit().text()
+        self.__findTextWidget.setLineEdit(replace_text)
+        self.__replaceTextWidget.setLineEdit(find_text)
 
     def __close(self):
-        self.__topWidget.close()
+        self.close()
 
 
 if __name__ == "__main__":
