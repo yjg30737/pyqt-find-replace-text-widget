@@ -16,6 +16,7 @@ class FindReplaceTextWidget(QWidget):
     def __initUi(self):
         self.__findTextWidget = FindTextWidget(self.__widget)
         self.__replaceTextWidget = ReplaceTextWidget(self.__widget)
+        self.__replaceTextWidget.replaceSignal.connect(self.__findTextWidget.next)
 
         findTextLineEdit = self.__findTextWidget.getLineEdit()
         findTextLineEdit.textChanged.connect(self.__prepareToReplaceFoundText)
