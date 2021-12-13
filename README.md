@@ -13,7 +13,8 @@ PyQt5 >= 5.8
 ## Setup
 ``` pip3 install git+https://github.com/yjg30737/pyqt-find-replace-text-widget.git --upgrade ```
 
-Note: <a href="https://github.com/yjg30737/pyqt-find-text-widget.git">pyqt-find-text-widget</a>(main branch) will be automatically installed too. Because it has to be included.
+## Included package
+* <a href="https://github.com/yjg30737/pyqt-find-text-widget.git">pyqt-find-text-widget</a>
 
 ## Usage
 
