@@ -1,0 +1,1 @@
+git+https://git@github.com/yjg30737/pyqt-find-text-widget.git@main
