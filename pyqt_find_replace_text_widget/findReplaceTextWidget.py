@@ -33,7 +33,7 @@ class FindReplaceTextWidget(QWidget):
 
         closeBtn = QPushButton()
         closeBtn.setShortcut('Escape')
-        closeBtn.clicked.connect(self.__close)
+        closeBtn.clicked.connect(self.close)
 
         btns = [swapBtn, closeBtn]
 
@@ -76,5 +76,6 @@ class FindReplaceTextWidget(QWidget):
         self.__findTextWidget.setLineEdit(replace_text)
         self.__replaceTextWidget.setLineEdit(find_text)
 
-    def __close(self):
-        self.close()
+    def close(self):
+        self.__findTextWidget.close()
+        super().close()
