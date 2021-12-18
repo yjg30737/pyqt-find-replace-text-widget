@@ -1,7 +1,5 @@
-import os
-
-from PyQt5.QtGui import QTextCursor, QIcon
-from PyQt5.QtWidgets import QWidget, QTextEdit, QApplication, QVBoxLayout, QHBoxLayout, QPushButton
+from PyQt5.QtGui import QTextCursor
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton
 from pyqt_find_text_widget.findTextWidget import FindTextWidget
 
 from pyqt_find_replace_text_widget.replaceTextWidget import ReplaceTextWidget
@@ -80,12 +78,3 @@ class FindReplaceTextWidget(QWidget):
 
     def __close(self):
         self.close()
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QApplication(sys.argv)
-    findReplaceTextWidget = FindReplaceTextWidget()
-    findReplaceTextWidget.show()
-    app.exec_()
