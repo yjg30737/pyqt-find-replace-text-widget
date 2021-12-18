@@ -15,14 +15,16 @@ PyQt5 >= 5.8
 
 ## Included package
 * <a href="https://github.com/yjg30737/pyqt-find-text-widget.git">pyqt-find-text-widget</a>
+* <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
 
-## Usage
+## Example
 
 I show you my full code sample. Set up this package, copy and paste this code to your IDE and run.
 
 ```python
 from PyQt5.QtWidgets import QMainWindow, QApplication, QGridLayout, QWidget, QTextEdit
 from pyqt_find_replace_text_widget.findReplaceTextWidget import FindReplaceTextWidget
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -31,6 +33,8 @@ class MainWindow(QMainWindow):
 
     def __initUi(self):
         self.__te = QTextEdit()
+        self.__te.setStyleSheet('QTextEdit { selection-background-color: lightblue; }')
+
         self.__w = FindReplaceTextWidget(self.__te)
 
         lay = QGridLayout()
@@ -51,3 +55,9 @@ if __name__ == "__main__":
     mainWindow.show()
     sys.exit(app.exec_())
 ```
+
+Result
+
+https://user-images.githubusercontent.com/55078043/146636169-eccd62b4-7964-40c1-a6c6-4fc813778a1e.mp4
+
+
