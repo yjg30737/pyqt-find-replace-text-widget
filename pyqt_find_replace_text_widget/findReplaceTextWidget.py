@@ -37,7 +37,7 @@ class FindReplaceTextWidget(QWidget):
         closeBtn.setShortcut('Escape')
         closeBtn.clicked.connect(self.__close)
 
-        PyQtResourceHelper.setStyleSheet(['swapBtn', 'closeBtn'], ['style/button2.css'])
+        PyQtResourceHelper.setStyleSheet(['swapBtn', 'closeBtn'], ['style/button2.css']*2)
         PyQtResourceHelper.setIcon(['swapBtn', 'closeBtn'], ['ico/swap_v.png', 'ico/close.png'])
 
         swapBtn.setToolTip('Swap Find/Replace Text')

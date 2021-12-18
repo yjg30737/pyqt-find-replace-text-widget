@@ -3,6 +3,7 @@ import os
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QWidget, QLineEdit, QPushButton, QHBoxLayout
+from pyqt_resource_helper import PyQtResourceHelper
 
 
 class ReplaceTextWidget(QWidget):
@@ -31,15 +32,9 @@ class ReplaceTextWidget(QWidget):
 
         btns = [self.__replaceBtn, self.__replaceAllBtn, self.__excludeBtn]
 
-        rel_dirname = os.path.dirname(os.path.relpath(__file__, os.getcwd()))
-
-        css_file_path = os.path.join(rel_dirname, r'style/button1.css')
-        css_file = open(css_file_path)
-        btn_css_code = css_file.read()
-        css_file.close()
+        PyQtResourceHelper.setStyleSheet(btns, ['style/button2.css']*len(btns))
 
         for btn in btns:
-            btn.setStyleSheet(btn_css_code)
             btn.setFont(QFont('Arial', 6))
             btn.setMinimumHeight(self.__replaceLineEdit.sizeHint().height())
 
