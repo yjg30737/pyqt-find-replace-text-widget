@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QWidget, QTextEdit, QApplication, QVBoxLayout, QHBox
 from pyqt_find_text_widget.findTextWidget import FindTextWidget
 
 from pyqt_find_replace_text_widget.replaceTextWidget import ReplaceTextWidget
+from pyqt_resource_helper.pyqtResourceHelper import PyQtResourceHelper
 
 
 class FindReplaceTextWidget(QWidget):
@@ -36,18 +37,8 @@ class FindReplaceTextWidget(QWidget):
         closeBtn.setShortcut('Escape')
         closeBtn.clicked.connect(self.__close)
 
-        rel_dirname = os.path.dirname(os.path.relpath(__file__, os.getcwd()))
-
-        css_file_path = os.path.join(rel_dirname, r'style/button2.css')
-        css_file = open(css_file_path)
-        btn_css_code = css_file.read()
-        css_file.close()
-
-        swapBtn.setStyleSheet(btn_css_code)
-        closeBtn.setStyleSheet(btn_css_code)
-
-        swapBtn.setIcon(QIcon(os.path.join(rel_dirname, r'ico/swap_v.png')))
-        closeBtn.setIcon(QIcon(os.path.join(rel_dirname, r'ico/close.png')))
+        PyQtResourceHelper.setStyleSheet(['swapBtn', 'closeBtn'], ['style/button2.css'])
+        PyQtResourceHelper.setIcon(['swapBtn', 'closeBtn'], ['ico/swap_v.png', 'ico/close.png'])
 
         swapBtn.setToolTip('Swap Find/Replace Text')
         closeBtn.setToolTip('Close')

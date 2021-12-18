@@ -1,1 +1,2 @@
 git+https://git@github.com/yjg30737/pyqt-find-text-widget.git@main
+git+https://git@github.com/yjg30737/pyqt-resource-helper.git@main

@@ -13,6 +13,7 @@ setup(
     url='https://github.com/yjg30737/pyqt-find-replace-text-widget.git',
     install_requires=[
         'PyQt5>=5.8',
-        'pyqt-find-text-widget @ git+https://git@github.com/yjg30737/pyqt-find-text-widget.git@main'
+        'pyqt-find-text-widget @ git+https://git@github.com/yjg30737/pyqt-find-text-widget.git@main',
+        'pyqt-resource-helpee @ git+https://git@github.com/yjg30737/pyqt-resource-helpee.git@main'
     ]
 )
