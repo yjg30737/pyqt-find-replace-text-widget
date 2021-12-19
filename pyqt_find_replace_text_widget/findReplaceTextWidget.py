@@ -19,6 +19,7 @@ class FindReplaceTextWidget(QWidget):
 
         findTextLineEdit = self.__findTextWidget.getLineEdit()
         findTextLineEdit.textChanged.connect(self.__prepareToReplaceFoundText)
+        self.setFocusProxy(findTextLineEdit)
 
         lay = QVBoxLayout()
         lay.addWidget(self.__findTextWidget)
