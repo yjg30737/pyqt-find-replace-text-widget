@@ -76,6 +76,18 @@ class FindReplaceTextWidget(QWidget):
         self.__findTextWidget.setLineEdit(replace_text)
         self.__replaceTextWidget.setLineEdit(find_text)
 
+    def setOnlyFindTextWidget(self, f: bool):
+        if self.__findTextWidget.isVisible():
+            pass
+        else:
+            if f:
+                self.__findTextWidget.setVisible(f)
+            else:
+                self.__findTextWidget.setVisible(not f)
+        self.__findTextWidget.setCloseBtn(f)
+        self.__replaceTextWidget.setVisible(not f)
+        self.__rightWidget.setVisible(not f)
+
     def close(self):
         self.__findTextWidget.close()
         super().close()
