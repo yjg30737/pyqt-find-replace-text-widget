@@ -48,12 +48,12 @@ class FindReplaceTextWidget(QWidget):
         lay.addWidget(closeBtn)
         lay.setContentsMargins(0, 0, 0, 0)
 
-        rightWidget = QWidget()
-        rightWidget.setLayout(lay)
+        self.__rightWidget = QWidget()
+        self.__rightWidget.setLayout(lay)
 
         lay = QHBoxLayout()
         lay.addWidget(leftWidget)
-        lay.addWidget(rightWidget)
+        lay.addWidget(self.__rightWidget)
         lay.setContentsMargins(0, 0, 0, 0)
 
         self.setLayout(lay)
