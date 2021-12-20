@@ -21,6 +21,8 @@ class FindReplaceTextWidget(QWidget):
         findTextLineEdit.textChanged.connect(self.__prepareToReplaceFoundText)
         self.setFocusProxy(findTextLineEdit)
 
+        replaceTextLineEdit = self.__replaceTextWidget.getLineEdit()
+
         self.__widget.textChanged.connect(self.__findTextWidget.widgetTextChanged)
 
         lay = QVBoxLayout()
@@ -60,6 +62,8 @@ class FindReplaceTextWidget(QWidget):
         lay.setContentsMargins(0, 0, 0, 0)
 
         self.setLayout(lay)
+
+        self.setTabOrder(findTextLineEdit, replaceTextLineEdit)
 
     def __prepareToReplaceFoundText(self, text):
         cursors = []
