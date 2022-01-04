@@ -60,4 +60,5 @@ Result
 
 https://user-images.githubusercontent.com/55078043/146636169-eccd62b4-7964-40c1-a6c6-4fc813778a1e.mp4
 
-
+## Note
+There is exclude button but i don't add feature on it. I will add proper feature on that one.
