@@ -101,6 +101,5 @@ class FindReplaceTextWidget(QWidget):
         self.__rightWidget.setVisible(not f)
 
     def close(self):
-        self.__findTextWidget.close()
         super().close()
         self.closeSignal.emit()
