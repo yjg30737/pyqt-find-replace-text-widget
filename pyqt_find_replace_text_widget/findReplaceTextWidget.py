@@ -1,3 +1,4 @@
+from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QTextCursor
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton
 from pyqt_find_text_widget.findTextWidget import FindTextWidget
@@ -7,6 +8,8 @@ from pyqt_resource_helper.pyqtResourceHelper import PyQtResourceHelper
 
 
 class FindReplaceTextWidget(QWidget):
+    closeSignal = pyqtSignal()
+
     def __init__(self, widget):
         super().__init__()
         self.__widget = widget
@@ -98,3 +101,4 @@ class FindReplaceTextWidget(QWidget):
     def close(self):
         self.__findTextWidget.close()
         super().close()
+        self.closeSignal.emit()
