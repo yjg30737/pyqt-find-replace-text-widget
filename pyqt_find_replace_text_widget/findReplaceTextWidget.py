@@ -21,6 +21,7 @@ class FindReplaceTextWidget(QWidget):
         self.__replaceTextWidget.replaceSignal.connect(self.__findTextWidget.next)
 
         findTextLineEdit = self.__findTextWidget.getLineEdit()
+        findTextLineEdit.closeSignal.connect(self.close)
         findTextLineEdit.textChanged.connect(self.__prepareToReplaceFoundText)
         self.setFocusProxy(findTextLineEdit)
 
