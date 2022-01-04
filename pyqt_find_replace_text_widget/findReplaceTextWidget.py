@@ -17,11 +17,12 @@ class FindReplaceTextWidget(QWidget):
 
     def __initUi(self):
         self.__findTextWidget = FindTextWidget(self.__widget)
+        self.__findTextWidget.closeSignal.connect(self.close)
+
         self.__replaceTextWidget = ReplaceTextWidget(self.__widget)
         self.__replaceTextWidget.replaceSignal.connect(self.__findTextWidget.next)
 
         findTextLineEdit = self.__findTextWidget.getLineEdit()
-        findTextLineEdit.closeSignal.connect(self.close)
         findTextLineEdit.textChanged.connect(self.__prepareToReplaceFoundText)
         self.setFocusProxy(findTextLineEdit)
 
