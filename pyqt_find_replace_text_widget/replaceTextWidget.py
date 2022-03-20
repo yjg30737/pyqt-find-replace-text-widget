@@ -30,7 +30,7 @@ class ReplaceTextWidget(QWidget):
 
         btns = [self.__replaceBtn, self.__replaceAllBtn, self.__excludeBtn]
 
-        PyQtResourceHelper.setStyleSheet(btns, ['style/button2.css']*len(btns))
+        PyQtResourceHelper.setStyleSheet(btns, ['style/button.css']*len(btns))
 
         for btn in btns:
             btn.setFont(QFont('Arial', 6))
