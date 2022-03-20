@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton
 from pyqt_find_text_widget.findTextWidget import FindTextWidget
 
 from pyqt_find_replace_text_widget.replaceTextWidget import ReplaceTextWidget
-from pyqt_resource_helper.pyqtResourceHelper import PyQtResourceHelper
+from pyqt_svg_icon_pushbutton import SvgIconPushButton
 
 
 class FindReplaceTextWidget(QWidget):
@@ -38,17 +38,14 @@ class FindReplaceTextWidget(QWidget):
         leftWidget = QWidget()
         leftWidget.setLayout(lay)
 
-        swapBtn = QPushButton()
+        swapBtn = SvgIconPushButton()
         swapBtn.clicked.connect(self.__swap)
+        swapBtn.setIcon('ico/swap_v.svg')
 
-        closeBtn = QPushButton()
+        closeBtn = SvgIconPushButton()
         closeBtn.setShortcut('Escape')
         closeBtn.clicked.connect(self.close)
-
-        btns = [swapBtn, closeBtn]
-
-        PyQtResourceHelper.setStyleSheet(btns, ['style/button2.css']*2)
-        PyQtResourceHelper.setIcon(btns, ['ico/swap_v.png', 'ico/close.png'])
+        closeBtn.setIcon('ico/close.svg')
 
         swapBtn.setToolTip('Swap Find/Replace Text')
         closeBtn.setToolTip('Close')
