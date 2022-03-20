@@ -1,5 +1,3 @@
-import os
-
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QWidget, QLineEdit, QPushButton, QHBoxLayout
