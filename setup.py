@@ -8,7 +8,7 @@ setup(
     license='MIT',
     packages=find_packages(),
     package_data={'pyqt_find_replace_text_widget.ico': ['swap_v.svg', 'close.svg']},
-    description='PyQt5 find and replace text widget',
+    description='PyQt widget which can find and replace text in the QTextEdit/QTextBrowser',
     url='https://github.com/yjg30737/pyqt-find-replace-text-widget.git',
     install_requires=[
         'PyQt5>=5.8',
