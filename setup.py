@@ -8,7 +8,7 @@ setup(
     license='MIT',
     packages=find_packages(),
     package_data={'pyqt_find_replace_text_widget.style': ['button1.css', 'button2.css'],
-                  'pyqt_find_replace_text_widget.ico': ['swap_v.png', 'close.png']},
+                  'pyqt_find_replace_text_widget.ico': ['swap_v.svg', 'close.svg']},
     description='PyQt5 find and replace text widget',
     url='https://github.com/yjg30737/pyqt-find-replace-text-widget.git',
     install_requires=[
