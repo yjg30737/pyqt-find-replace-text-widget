@@ -58,6 +58,8 @@ if __name__ == "__main__":
 
 Result
 
+Note: Button icons in preview are obsolete.
+
 https://user-images.githubusercontent.com/55078043/146636169-eccd62b4-7964-40c1-a6c6-4fc813778a1e.mp4
 
 ## Note
