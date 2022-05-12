@@ -1,6 +1,5 @@
 # pyqt-find-replace-text-widget
 
-## General Info
 PyQt widget which can find and replace text in the QTextEdit/QTextBrowser
 
 ## Class Overview
@@ -11,7 +10,7 @@ PyQt widget which can find and replace text in the QTextEdit/QTextBrowser
 * PyQt5 >= 5.8
 
 ## Setup
-``` pip3 install git+https://github.com/yjg30737/pyqt-find-replace-text-widget.git --upgrade ```
+`python -m pip install pyqt-find-replace-text-widget`
 
 ## Included package
 * <a href="https://github.com/yjg30737/pyqt-find-text-widget.git">pyqt-find-text-widget</a>
