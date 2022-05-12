@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
 Result
 
-Note: Button icons in preview are obsolete.
+Note: Button icons in preview are obsolete. Back then button icons were PNG, but now these are brand-new good looking SVG!
 
 https://user-images.githubusercontent.com/55078043/146636169-eccd62b4-7964-40c1-a6c6-4fc813778a1e.mp4
 
