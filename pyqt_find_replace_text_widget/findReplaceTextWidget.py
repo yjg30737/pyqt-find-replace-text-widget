@@ -1,10 +1,10 @@
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QTextCursor
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
 from pyqt_find_text_widget.findTextWidget import FindTextWidget
 
 from pyqt_find_replace_text_widget.replaceTextWidget import ReplaceTextWidget
-from pyqt_svg_icon_pushbutton import SvgIconPushButton
+from pyqt_svg_button import SvgButton
 
 
 class FindReplaceTextWidget(QWidget):
@@ -38,11 +38,11 @@ class FindReplaceTextWidget(QWidget):
         leftWidget = QWidget()
         leftWidget.setLayout(lay)
 
-        swapBtn = SvgIconPushButton()
+        swapBtn = SvgButton()
         swapBtn.clicked.connect(self.__swap)
         swapBtn.setIcon('ico/swap_v.svg')
 
-        closeBtn = SvgIconPushButton()
+        closeBtn = SvgButton()
         closeBtn.setShortcut('Escape')
         closeBtn.clicked.connect(self.close)
         closeBtn.setIcon('ico/close.svg')
