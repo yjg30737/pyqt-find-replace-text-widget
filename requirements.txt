@@ -1,2 +1,1 @@
-pyqt-resource-helper>=0.0.1
 pyqt-find-text-widget>=0.0.1
