@@ -29,10 +29,6 @@ class ReplaceTextWidget(QWidget):
 
         btns = [self.__replaceBtn, self.__replaceAllBtn, self.__excludeBtn]
 
-        for btn in btns:
-            btn.setFont(QFont('Arial', 6))
-            btn.setMinimumHeight(self.__replaceLineEdit.sizeHint().height())
-
         self.__replaceBtn.clicked.connect(self.__replace)
         self.__replaceAllBtn.clicked.connect(self.__replaceAll)
         self.__excludeBtn.clicked.connect(self.__exclude)
