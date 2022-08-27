@@ -37,6 +37,7 @@ class ReplaceTextWidget(QWidget):
         lay.addWidget(self.__replaceLineEdit)
         for btn in btns:
             lay.addWidget(btn)
+        lay.addStretch(0)
 
         lay.setContentsMargins(0, 0, 0, 0)
         self.setLayout(lay)

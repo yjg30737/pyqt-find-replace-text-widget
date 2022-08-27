@@ -22,11 +22,11 @@ class FindReplaceTextWidget(QWidget):
         self.__replaceTextWidget = ReplaceTextWidget(self.__widget)
         self.__replaceTextWidget.replaceSignal.connect(self.__findTextWidget.next)
 
-        findTextLineEdit = self.__findTextWidget.getLineEdit()
-        findTextLineEdit.textChanged.connect(self.__prepareToReplaceFoundText)
-        self.setFocusProxy(findTextLineEdit)
+        self.__findTextLineEdit = self.__findTextWidget.getLineEdit()
+        self.__findTextLineEdit.textChanged.connect(self.__prepareToReplaceFoundText)
+        self.setFocusProxy(self.__findTextLineEdit)
 
-        replaceTextLineEdit = self.__replaceTextWidget.getLineEdit()
+        self.__replaceTextLineEdit = self.__replaceTextWidget.getLineEdit()
 
         self.__widget.textChanged.connect(self.__findTextWidget.widgetTextChanged)
 
@@ -34,6 +34,25 @@ class FindReplaceTextWidget(QWidget):
         lay.addWidget(self.__findTextWidget)
         lay.addWidget(self.__replaceTextWidget)
         lay.setContentsMargins(0, 0, 0, 0)
+        lay.setSpacing(2)
+
+        standardTextWidgetHeight = max(self.__findTextWidget.sizeHint().height(),
+                                       self.__replaceTextWidget.sizeHint().height())
+
+        self.__findTextWidget.setMinimumHeight(standardTextWidgetHeight)
+        self.__replaceTextWidget.setMinimumHeight(standardTextWidgetHeight)
+
+        self.__findTextLineEdit.setStyleSheet('QLineEdit { border: 1px solid gray; }')
+        self.__replaceTextLineEdit.setStyleSheet('QLineEdit { border: 1px solid gray; }')
+
+        standardLineEditWidth = 100
+        standardLineEditHeight = standardTextWidgetHeight
+
+        self.__findTextLineEdit.setMinimumHeight(standardLineEditHeight)
+        self.__replaceTextLineEdit.setMinimumHeight(standardLineEditHeight)
+
+        self.__findTextLineEdit.setMinimumWidth(standardLineEditWidth)
+        self.__replaceTextLineEdit.setMinimumWidth(standardLineEditWidth)
 
         leftWidget = QWidget()
         leftWidget.setLayout(lay)
@@ -65,7 +84,7 @@ class FindReplaceTextWidget(QWidget):
 
         self.setLayout(lay)
 
-        self.setTabOrder(findTextLineEdit, replaceTextLineEdit)
+        self.setTabOrder(self.__findTextLineEdit, self.__replaceTextLineEdit)
 
     def __prepareToReplaceFoundText(self, text):
         cursors = []
@@ -100,3 +119,6 @@ class FindReplaceTextWidget(QWidget):
     def close(self):
         super().close()
         self.closeSignal.emit()
+
+    def resizeEvent(self, e):
+        return super().resizeEvent(e)
